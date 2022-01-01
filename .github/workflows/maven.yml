@@ -26,22 +26,22 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
       
-  create_report_directory:
+  #create_report_directory:
    
-   runs-on: ubuntu-latest
+   #runs-on: ubuntu-latest
    
-   needs: build
+   #needs: build
    
-   steps:
-   - name: Create report path
-   - uses: actions/checkout@v2
-   - run:  mkdir -p /java-maven-ci-playground/checkstyle_report
+   #steps:
+   #- name: Create report path
+   #- uses: actions/checkout@v2
+   #- run:  mkdir -p /java-maven-ci-playground/checkstyle_report
       
   check:
   
    runs-on: ubuntu-latest
    
-   needs: create_report_directory
+   needs: build
 
    steps:
      - uses: actions/checkout@v2
@@ -54,9 +54,20 @@ jobs:
      - name: Checkstyle with Maven
        run: mvn checkstyle:check 
      
-     - name: Upload Checkstyle report
-       uses: actions/upload-artifact@v2
-       with:
-         name: report
-         path: /java-maven-ci-playground/checkstyle_report/checkstyle.html
+  create_report_directory:
+   
+      runs-on: ubuntu-latest
+   
+      needs: build
+      
+      steps:
+      - name: Create report path
+      - uses: actions/checkout@v2
+      - run:  mkdir -p /java-maven-ci-playground/checkstyle_report
+     
+      - name: Upload Checkstyle report
+        uses: actions/upload-artifact@v2
+        with:
+          name: report
+          path: /java-maven-ci-playground/checkstyle_report/checkstyle.html
   
