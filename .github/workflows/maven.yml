@@ -29,6 +29,8 @@ jobs:
   check:
   
    runs-on: ubuntu-latest
+   
+   needs: build
 
    steps:
      - uses: actions/checkout@v2
@@ -39,5 +41,5 @@ jobs:
          distribution: 'adopt'
          cache: maven
      - name: Checkstyle with Maven
-       run: mvn checkstyle:check --file pom.xml
+       run: mvn checkstyle:check 
 
