@@ -27,7 +27,7 @@ jobs:
       run: mvn -B package --file pom.xml
       
     - name: spotbugs
-      run: spotbugs:check
+      run: spotbugs:spotbugs
       
        
   check:
