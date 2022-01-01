@@ -25,6 +25,11 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+     <dependency>
+     <groupId>com.github.spotbugs</groupId>
+     <artifactId>spotbugs</artifactId>
+     <version>4.5.2</version>
+   </dependency>
   </dependencies>
 
   <build>
@@ -76,11 +81,7 @@
         </version>
  <dependencies>
    <!-- overwrite dependency on spotbugs if you want to specify the version of spotbugs -->
-   <dependency>
-     <groupId>com.github.spotbugs</groupId>
-     <artifactId>spotbugs</artifactId>
-     <version>4.5.2</version>
-   </dependency>
+  
  </dependencies>
 </plugin>
 <plugin>
