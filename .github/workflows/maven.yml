@@ -26,9 +26,17 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
       
-    - name: Checkstyle with Maven
-      run: mvn checkstyle:check 
-      
+       
+  check:
+  
+   runs-on: ubuntu-latest
+   
+   needs: build
+
+   steps:
+    
+     - name: Checkstyle with Maven
+       run: mvn checkstyle:check 
  
      
 
