@@ -70,7 +70,6 @@
           <version>3.0.0</version>
         </plugin>
       </plugins>
-    </pluginManagement>
       <plugin>
       <groupId>com.github.spotbugs</groupId>
  <artifactId>spotbugs-maven-plugin</artifactId>
@@ -85,6 +84,7 @@
    </dependency>
  </dependencies>
 </plugin>
+</pluginManagement>
   </build>
 <reporting>
   <plugins>
