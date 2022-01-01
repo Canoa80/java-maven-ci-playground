@@ -39,5 +39,5 @@ jobs:
          distribution: 'adopt'
          cache: maven
      - name: Checkstyle with Maven
-       run: mvn checkstyle:check
+       run: mvn checkstyle:check --file pom.xml
 
