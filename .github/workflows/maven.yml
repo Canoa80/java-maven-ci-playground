@@ -42,9 +42,12 @@ jobs:
          cache: maven
      - name: Checkstyle with Maven
        run: mvn checkstyle:check 
+       
+     - name: Create report path
+     - run:  mkdir -p /java-maven-ci-playground/checkstyle_report/
      - name: Upload Checkstyle report
-       uses: actions/upload-artifact@v1
+       uses: actions/upload-artifact@v2
        with:
-          name: report
-          path: /java-maven-ci-playground/documentation/checkstyle.html
-
+         name: report
+         path: /java-maven-ci-playground/checkstyle_report/checkstyle.html
+  
