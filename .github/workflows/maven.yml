@@ -41,5 +41,10 @@ jobs:
          distribution: 'adopt'
          cache: maven
      - name: Checkstyle with Maven
-       run: mvn checkstyle:check 
+       run: mvn checkstyle:check --stacktrace
+     - name: Upload Checkstyle report
+       uses: actions/upload-artifact@v1
+       with:
+          name: report
+          path: app/build/reports/checkstyle/checkstyle.html
 
