@@ -44,7 +44,8 @@ jobs:
        run: mvn checkstyle:check 
        
      - name: Create report path
-     - run:  mkdir -p /java-maven-ci-playground/checkstyle_report/
+     - run:  mkdir -p /java-maven-ci-playground/checkstyle_report
+     
      - name: Upload Checkstyle report
        uses: actions/upload-artifact@v2
        with:
