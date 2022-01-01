@@ -46,5 +46,5 @@ jobs:
        uses: actions/upload-artifact@v1
        with:
           name: report
-          path: java-maven-ci-playground/checkstyle.html
+          path: /home/antonio/main/checkstyle.html
 
